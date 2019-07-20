@@ -35,6 +35,7 @@ public class ImageDetectionProperties {
     }
 
     public boolean isDetectedAreaBeyondLimits() {
+        //return false;
         return resultArea > previewArea * 0.95  || resultArea < previewArea * 0.20;
     }
 
@@ -114,18 +115,18 @@ public class ImageDetectionProperties {
     }
 
     private boolean isBottomEdgeTouching() {
-        return (bottomLeftPoint.x >= previewHeight - 50 || bottomRightPoint.x >= previewHeight - 50);
+        return (bottomLeftPoint.x >= previewHeight - 30 || bottomRightPoint.x >= previewHeight - 30);
     }
 
     private boolean isTopEdgeTouching() {
-        return (topLeftPoint.x <= 50 || topRightPoint.x <= 50);
+        return (topLeftPoint.x <= 30 || topRightPoint.x <= 30);
     }
 
     private boolean isRightEdgeTouching() {
-        return (topRightPoint.y >= previewWidth - 50 || bottomRightPoint.y >= previewWidth - 50);
+        return (topRightPoint.y >= previewWidth - 30 || bottomRightPoint.y >= previewWidth - 30);
     }
 
     private boolean isLeftEdgeTouching() {
-        return (topLeftPoint.y <= 50 || bottomLeftPoint.y <= 50);
+        return (topLeftPoint.y <= 30 || bottomLeftPoint.y <= 30);
     }
 }
